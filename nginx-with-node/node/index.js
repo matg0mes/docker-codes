@@ -12,7 +12,10 @@ const config = {
 }
 
 const connection = mysql.createConnection(config)
+const tableCreate = `CREATE TABLE IF NOT EXISTS people(id int not null auto_increment, name varchar(255), primary key(id))`
 const sql = `INSERT INTO people(name) values('matheus')`
+
+connection.query(tableCreate)
 connection.query(sql)
 connection.end()
 
