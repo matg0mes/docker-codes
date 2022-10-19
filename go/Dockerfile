@@ -3,9 +3,9 @@ FROM golang:1.19-alpine AS builder
 WORKDIR /usr/src/app
 
 COPY . .
-ENTRYPOINT ["go", "build"]
+RUN go build -ldflags "-s -w"
 
-FROM alpine:3.16.2
+FROM hello-world:latest
 
 WORKDIR /usr/src/app
 
