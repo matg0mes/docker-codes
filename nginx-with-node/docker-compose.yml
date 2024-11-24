@@ -13,8 +13,6 @@ services:
     depends_on:
       - db
   
-
-  
   nginx:
     build: 
       context: ./nginx
